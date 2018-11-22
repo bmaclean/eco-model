@@ -16,8 +16,14 @@ eats(mouse, grass).
 eats(buffalo, grass).
 
 % property(P, A, V) is some property P of animal A with value V
-% property(weight, lion, 100).
-
+property(weight, lion, 100).
+property(weight, buffalo, 50).
+property(weight, monkey, 10).
+property(weight, mouse, 1).
+property(height, lion, 100).
+property(height, buffalo, 50).
+property(height, monkey, 10).
+property(height, mouse, 1).
 
 % herbivore(X) returns true if individual X eats only plants
 herbivore(X) :-
