@@ -14,15 +14,11 @@ noun_phrase(T0,T4,Ind) :-
     noun(T2,T3,Ind),
     mp(T3,T4,Ind).
 
-% Try:
-%?- noun_phrase([a,spanish,speaking,country],T1,I1).
-%?- noun_phrase([a,country,that,borders,chile],T2,I2).
-%?- noun_phrase([a,spanish,speaking,country,that,borders,chile],T3,I3).
-
 % Determiners (articles) are ignored in this oversimplified example.
 % They do not provide any extra constraints.
 det([the | T],T,_).
 det([a | T],T,_).
+det([an | T],T,_).
 det(T,T,_).
 
 % adjectives(T0,T1,Ind) is true if 
@@ -45,8 +41,8 @@ mp([that|T0],T2,Subject) :-
 mp(T,T,_).
 
 % DICTIONARY
-%adj([large | T],T,Obj) :- large(Obj).
-%adj([Lang,speaking | T],T,Obj) :- speaks(Obj,Lang).
+adj([herbivore | T],T,Obj) :- herbivore(Obj).
+adj([carnivore | T],T,Obj) :- carnivore(Obj).
 
 noun([animal | T],T,Obj) :- animal(Obj).
 noun([plant | T],T,Obj) :- plant(Obj).
