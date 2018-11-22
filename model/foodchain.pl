@@ -5,18 +5,19 @@ plant(grass).
 % animal(A) defines individual A as an animal
 animal(lion).
 animal(buffalo).
-animal(monkey).
+animal(baboon).
 animal(mouse).
 
 % eats(A, B) defines a relation such that animal A eats individual B
 eats(lion, buffalo).
-eats(lion, monkey).
-eats(monkey, mouse).
+eats(lion, baboon).
+eats(baboon, mouse).
 eats(mouse, grass).
 eats(buffalo, grass).
 
 % property(P, A, V) is some property P of animal A with value V
-% property(weight, lion, 100).
+property(weight, lion, 190).
+property(weight, baboon, 25).
 
 
 % herbivore(X) returns true if individual X eats only plants
