@@ -11,6 +11,7 @@ growthrate(mouse, 1.99).
 
 % extinct(S, T) is true if species S has gone extinct at time T
 extinct(S, T) :-
+    % TODO: arguments not sufficiently instantiated
     populationat(S, T, 2).
 
 % populationat(S, T) is the population of species S after time period T

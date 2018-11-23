@@ -51,7 +51,7 @@ noun([X | T],T,X) :- animal(X).
 noun([X | T],T,X) :- plant(X).
 
 reln([eats | T],T,O1,O2) :- eats(O1,O2).
-reln([population, of | T], T, P, Animal) :-  initpopulation(Animal, P).
+reln([energyflow | T],T,O1,O2) :- energyflow(O1,O2).
 
 % question(Question,QR,Object) is true if Query provides an answer about Object to Question
 question(['Is' | T0],T2,Obj) :-
