@@ -35,11 +35,11 @@ property(height, buffalo, 50).
 property(height, monkey, 10).
 property(height, mouse, 1).
 
-% energyflow(X, Y) is true if energy flows from X to Y in the ecosystem
-energyflow(sun, P) :- plant(P).
-energyflow(X, Y) :-
+% transfers_energy_to(X, Y) is true if energy flows from X to Y in the ecosystem
+transfers_energy_to(sun, P) :- plant(P).
+transfers_energy_to(X, Y) :-
     plant(X), herbivore(Y),
     dif(X, Y).
-energyflow(X, Y) :-
+transfers_energy_to(X, Y) :-
     animal(X), carnivore(Y),
     dif(X, Y).

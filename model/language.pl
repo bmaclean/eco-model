@@ -1,5 +1,7 @@
 :- [foodchain, population].
 
+% Code adapted from David Poole https://www.cs.ubc.ca/~poole/cs312/2018/slides/lect27s.pdf
+
 % noun_phrase(T0,T4,Ind) is true if
 %  T0 and T4 are list of words, such that
 %        T4 is an ending of T0
@@ -51,7 +53,7 @@ noun([X | T],T,X) :- animal(X).
 noun([X | T],T,X) :- plant(X).
 
 reln([eats | T],T,O1,O2) :- eats(O1,O2).
-reln([energyflow | T],T,O1,O2) :- energyflow(O1,O2).
+reln([transfers, energy, to | T],T,O1,O2) :- transfers_energy_to(O1,O2).
 
 % question(Question,QR,Object) is true if Query provides an answer about Object to Question
 question(['Is' | T0],T2,Obj) :-
