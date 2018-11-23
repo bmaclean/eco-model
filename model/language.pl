@@ -49,11 +49,14 @@ adj([carnivore | T],T,Obj) :- carnivore(Obj).
 
 noun([animal | T],T,Obj) :- animal(Obj).
 noun([plant | T],T,Obj) :- plant(Obj).
+noun([location | T],T,Obj) :- location(Obj).
 noun([X | T],T,X) :- animal(X).
 noun([X | T],T,X) :- plant(X).
+noun([X | T],T,X) :- location(X).
 
 reln([eats | T],T,O1,O2) :- eats(O1,O2).
 reln([transfers, energy, to | T],T,O1,O2) :- transfers_energy_to(O1,O2).
+reln([lives, in | T],T,O1,O2) :- lives_in(O1,O2).
 
 % question(Question,QR,Object) is true if Query provides an answer about Object to Question
 question(['Is' | T0],T2,Obj) :-
