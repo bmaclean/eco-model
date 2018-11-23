@@ -11,8 +11,10 @@ adjective([carnivore | T],T,Obj) :- carnivore(Obj).
 % Known nouns:
 noun([animal | T],T,Obj) :- animal(Obj).
 noun([plant | T],T,Obj) :- plant(Obj).
+noun([location | T],T,Obj) :- location(Obj).
 noun([X | T],T,X) :- animal(X).
 noun([X | T],T,X) :- plant(X).
+noun([X | T],T,X) :- location(X).
 
 % Known relations (including verbs, prepositions):
 reln([eats | T],T,O1,O2) :- eats(O1,O2).
@@ -41,8 +43,8 @@ ask(Q,A) :-
 
 % query(Ans) starts the program, and returns answer Ans if a query result exists,
 %   and false otherwise
-query(Ans) :-
+query(Ans, Resp) :-
     write("Ask me: "), flush_output(current_output),
     readln(Ln),
-    question(Ln,End,Ans),
+    setof(Ans, question(Ln,End,Ans), Resp),
     member(End,[[],['?'],['.']]).

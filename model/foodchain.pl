@@ -8,12 +8,27 @@ animal(buffalo).
 animal(baboon).
 animal(mouse).
 
+% location(A) defines location A where animal lives
+location(savannah).
+location(forest).
+location(swamps).
+
 % eats(A, B) defines a relation such that animal A eats individual B
 eats(lion, buffalo).
 eats(lion, baboon).
 eats(baboon, mouse).
 eats(mouse, grass).
 eats(buffalo, grass).
+
+% lives_in(A, B) defines a relation such that animal A lives in location B
+lives_in(lion, savannah).
+lives_in(baboon, savannah).
+lives_in(mouse, forest).
+lives_in(buffalo, swamps).
+
+cohabits(A1, A2) :-
+    lives_in(A1, X),
+    lives_in(A2, X).
 
 % herbivore(X) returns true if individual X eats only plants
 herbivore(X) :-
