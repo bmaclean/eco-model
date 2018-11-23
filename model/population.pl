@@ -1,4 +1,3 @@
-
 % initpopulation(X, P) defines the initial population P of species X
 initpopulation(lion, 120).
 initpopulation(buffalo, 1030).
@@ -12,7 +11,7 @@ growthrate(mouse, 1.99).
 
 % extinct(S, T) is true if species S has gone extinct at time T
 extinct(S, T) :-
-    populationat(S, T, 0.0).
+    populationat(S, T, 2).
 
 % populationat(S, T) is the population of species S after time period T
 %   equation is based on Malthusian growth model, P(t) = Pi*e^(rt)
@@ -20,8 +19,4 @@ extinct(S, T) :-
 populationat(S, T, P) :-
     growthrate(S, R),
     initpopulation(S, I),
-    P is (I*exp(T*R)).
-
-% 
-
-
+    P is I*exp(T*R).
