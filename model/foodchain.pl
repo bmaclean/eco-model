@@ -1,4 +1,4 @@
-
+:- dynamic plant/1, animal/1, location/1, eats/2, lives_in/2, property/3, transfers_energy_to/2.
 % plant(A) defines individual A as a plant
 plant(grass).
 

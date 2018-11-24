@@ -1,3 +1,4 @@
+:- dynamic initpopulation/2, growthrate/2.
 % initpopulation(X, P) defines the initial population P of species X
 initpopulation(lion, 120).
 initpopulation(buffalo, 1030).
