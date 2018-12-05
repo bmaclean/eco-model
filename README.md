@@ -5,8 +5,8 @@ Eco Model serves to model an ecological system in prolog. The model provides two
 
 ### 1. Ecological Queries
 The user can query the system using natural language. Eco Model uses natural language processing to parse queries and return answers from the knowledge base.
-### 2. Animal Guessing Game
-Using a binary search tree, the application can successfully guess any animal the user is thinking of using facts about the animal defined in the program. The game uses a caching system to remember previous responses and prevent redundancy.
+### 2. Dynamic Addition into Dataset
+If the user has all the properties of a given animal, and wants to ask Eco Model questions about its population or other predicates, Eco Model allows for the dynamic addition of animals into the dataset.
 
 ## Using the Application
 
